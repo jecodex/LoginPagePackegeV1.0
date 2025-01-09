@@ -7,24 +7,38 @@ export default function Home() {
       title: "Terra",
       tags: ["blog", "personal", "list", "featured"],
       date: "10.01.2025",
-      image: "/one.png",
-      link: "https://www.google.com",
+      image: "/preview/one.png",
+      link: "/one",
+    },
+    {
+      title: "Neon Wave",
+      tags: ["blog", "personal", "list", "featured"],
+      date: "10.01.2025",
+      image: "/preview/l2.png",
+      link: "/l2",
+    },
+    {
+      title: "Black Hole",
+      tags: ["blog", "personal", "list", "featured"],
+      date: "10.01.2025",
+      image: "/preview/l3.png",
+      link: "/l3",
     },
     {
       title: "Aurora",
       date: "Coming Soon",
       tags: [],
-      link: null, // No link for "Coming Soon"
+      link: "/l2", // No link for "Coming Soon"
     },
     {
       title: "Lumen",
-      date: "25.01.2025",
+      date: "Coming Soon",
       tags: [],
-      link: null,
+      link: "/l3",
     },
     {
       title: "Stella",
-      date: "10.02.2025",
+      date: "Coming Soon",
       tags: [],
       link: null,
     },
@@ -36,7 +50,7 @@ export default function Home() {
     },
     {
       title: "Rivus",
-      date: "10.03.2025",
+      date: "Coming Soon",
       tags: [],
       link: null,
     },

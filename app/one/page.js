@@ -1,6 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
 
+// by blackrise themes
+
 export default function LoginPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-yellow-300">
