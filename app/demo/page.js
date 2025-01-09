@@ -26,27 +26,31 @@ export default function Home() {
     },
     {
       title: "Aurora",
-      date: "Coming Soon",
-      tags: [],
-      link: "/l2", // No link for "Coming Soon"
+      tags: ["blog", "personal", "list", "featured"],
+      date: "10.01.2025",
+      image: "/preview/l4.png",
+      link: "/l4",
     },
     {
       title: "Lumen",
-      date: "Coming Soon",
-      tags: [],
-      link: "/l3",
+      tags: ["blog", "personal", "list", "featured"],
+      date: "10.01.2025",
+      image: "/preview/l5.png",
+      link: "/l5",
     },
     {
       title: "Stella",
-      date: "Coming Soon",
-      tags: [],
-      link: null,
+      tags: ["blog", "personal", "list", "featured"],
+      date: "10.01.2025",
+      image: "/preview/l6.png",
+      link: "/l6",
     },
     {
       title: "Oscura",
-      date: "Coming Soon",
-      tags: [],
-      link: null, // No link for "Coming Soon"
+      date: "10.01.2025",
+      tags: ["blog", "personal", "list", "featured"],
+      image: "/preview/l7.png",
+      link: "/l7",
     },
     {
       title: "Rivus",

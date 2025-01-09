@@ -1,14 +1,25 @@
+"use client";
 import React from "react";
 import { AiOutlineClockCircle } from "react-icons/ai"; // Import a clock icon
 
 const Card = ({ title, tags, date, image, link }) => {
   const isComingSoon = !link; // Check if it's "Coming Soon"
 
+  const handleCardClick = () => {
+    if (!isComingSoon) {
+      window.location.href = link; // Navigate to the link if available
+    }
+  };
+
   return (
     <div
-      className={`relative border rounded-lg shadow-md p-4 bg-white transition-transform transform ${
-        isComingSoon ? "opacity-70 cursor-not-allowed" : "hover:scale-105"
+      onClick={handleCardClick}
+      className={`relative border rounded-lg shadow-md p-4 bg-white transition-transform transform cursor-pointer ${
+        isComingSoon
+          ? "opacity-70 cursor-not-allowed"
+          : "hover:scale-105 hover:shadow-lg"
       }`}
+      style={isComingSoon ? { pointerEvents: "none" } : {}}
     >
       {image ? (
         <img
@@ -44,12 +55,9 @@ const Card = ({ title, tags, date, image, link }) => {
       </div>
 
       {!isComingSoon ? (
-        <a
-          href={link}
-          className="inline-block mt-4 text-blue-500 font-semibold hover:underline"
-        >
+        <p className="inline-block mt-4 text-blue-500 font-semibold hover:underline">
           View Details
-        </a>
+        </p>
       ) : (
         <p className="text-gray-400 font-medium mt-4">Coming Soon</p>
       )}
