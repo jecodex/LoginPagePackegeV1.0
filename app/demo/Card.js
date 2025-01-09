@@ -1,9 +1,15 @@
 import React from "react";
 import { AiOutlineClockCircle } from "react-icons/ai"; // Import a clock icon
 
-const Card = ({ title, tags, date, image, comingSoon }) => {
+const Card = ({ title, tags, date, image, link }) => {
+  const isComingSoon = !link; // Check if it's "Coming Soon"
+
   return (
-    <div className="relative border rounded-lg shadow-lg p-4 bg-white">
+    <div
+      className={`relative border rounded-lg shadow-md p-4 bg-white transition-transform transform ${
+        isComingSoon ? "opacity-70 cursor-not-allowed" : "hover:scale-105"
+      }`}
+    >
       {image ? (
         <img
           src={image}
@@ -11,27 +17,42 @@ const Card = ({ title, tags, date, image, comingSoon }) => {
           className="w-full h-40 object-cover rounded-lg"
         />
       ) : (
-        <div className="w-full h-40 bg-gray-200 flex items-center justify-center rounded-lg">
-          <p className="text-gray-500 text-xl">Coming Soon</p>
+        <div className="w-full h-40 bg-gray-100 flex items-center justify-center rounded-lg">
+          <p className="text-gray-500 text-xl font-semibold">Coming Soon</p>
         </div>
       )}
-      <div className="absolute top-2 right-2 bg-white px-2 py-1 rounded flex items-center gap-1 text-sm font-semibold text-gray-600">
-        <AiOutlineClockCircle className="text-gray-500" /> {/* Add the icon */}
+
+      <div className="absolute top-2 right-2 bg-white px-2 py-1 rounded flex items-center gap-1 text-sm font-semibold text-gray-600 shadow">
+        <AiOutlineClockCircle className="text-gray-500" /> {/* Icon */}
         <span>{date || "Coming Soon"}</span>
       </div>
+
       <div className="mt-4">
-        <h3 className="text-lg font-bold">{title}</h3>
-        <div className="flex flex-wrap gap-2 mt-2">
-          {tags.map((tag, index) => (
-            <span
-              key={index}
-              className="text-xs font-medium text-white bg-green-500 px-2 py-1 rounded"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
+        <h3 className="text-lg font-bold text-gray-800">{title}</h3>
+        {tags.length > 0 && (
+          <div className="flex flex-wrap gap-2 mt-2">
+            {tags.map((tag, index) => (
+              <span
+                key={index}
+                className="text-xs font-medium text-white bg-blue-600 px-2 py-1 rounded"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
+
+      {!isComingSoon ? (
+        <a
+          href={link}
+          className="inline-block mt-4 text-blue-500 font-semibold hover:underline"
+        >
+          View Details
+        </a>
+      ) : (
+        <p className="text-gray-400 font-medium mt-4">Coming Soon</p>
+      )}
     </div>
   );
 };

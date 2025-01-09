@@ -7,32 +7,38 @@ export default function Home() {
       title: "Terra",
       tags: ["blog", "personal", "list", "featured"],
       date: "10.01.2025",
-      image: "/terra-preview.png",
+      image: "/one.png",
+      link: "https://www.google.com",
     },
     {
       title: "Aurora",
       date: "Coming Soon",
       tags: [],
+      link: null, // No link for "Coming Soon"
     },
     {
       title: "Lumen",
       date: "25.01.2025",
       tags: [],
+      link: null,
     },
     {
       title: "Stella",
       date: "10.02.2025",
       tags: [],
+      link: null,
     },
     {
       title: "Oscura",
       date: "Coming Soon",
       tags: [],
+      link: null, // No link for "Coming Soon"
     },
     {
       title: "Rivus",
       date: "10.03.2025",
       tags: [],
+      link: null,
     },
   ];
 
